@@ -10,14 +10,14 @@ namespace brProject.Models
     {
         public virtual int Id { get; protected set; }
         public virtual string Name { get; set; }
-       // public virtual IList<Product> Products { get; protected set; }
-        public virtual IList<Employee> Staff { get; protected set; }
+        public virtual IList<Product> Products { get; protected set; }
+        //public virtual IList<Employee> Staff { get; protected set; }
         public virtual IList<Category> Categories { get; protected set; }
 
         public Store()
         {
-           // Products = new List<Product>();
-            Staff = new List<Employee>();
+            Products = new List<Product>();
+            //Staff = new List<Employee>();
             Categories = new List<Category>();
         }
 
@@ -27,10 +27,10 @@ namespace brProject.Models
         //    Products.Add(product);
         //}
 
-        public virtual void AddEmployee(Employee employee)
-        {
-            employee.Store = this;
-            Staff.Add(employee);
-        }
+        //public virtual void AddEmployee(Employee employee)
+        //{
+        //    employee.Store = this;
+        //    Staff.Add(employee);
+        //}
     }
 }

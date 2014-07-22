@@ -21,10 +21,6 @@
   <Class Name="brProject.Models.Product">
     <Position X="3.25" Y="3.5" Width="1.5" />
     <TypeIdentifier />
-    <ShowAsCollectionAssociation>
-      <Property Name="StoresStockedIn" />
-      <Property Name="CategoryStockedIn" />
-    </ShowAsCollectionAssociation>
   </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>
