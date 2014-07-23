@@ -223,7 +223,16 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Store\Index.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\brProject.Infraestructure\brProject.Infraestructure.csproj">
+      <Project>{f196ae90-490b-4adc-a392-9b3f9c6ee0db}</Project>
+      <Name>brProject.Infraestructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\brProject.Models\brProject.Models.csproj">
+      <Project>{4e787db4-d8e2-4733-b09a-e82cceb90c35}</Project>
+      <Name>brProject.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />

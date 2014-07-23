@@ -32,23 +32,12 @@ namespace brProjectMVC.Tests.Controllers
             StoreController controller = new StoreController();
 
             // Act
-            ViewResult result = controller.Product() as ViewResult;
+            ViewResult result = controller.GetProduct(1) as ViewResult;
 
             // Assert
             Assert.AreEqual("Your application description page.", result.ViewBag.Message);
         }
 
-        [TestMethod]
-        public void Categories()
-        {
-            // Arrange
-            StoreController controller = new StoreController();
-
-            // Act
-            ViewResult result = controller.Categories() as ViewResult;
-
-            // Assert
-            Assert.IsNotNull(result);
-        }
+      
     }
 }

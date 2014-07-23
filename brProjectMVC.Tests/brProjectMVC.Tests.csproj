@@ -94,6 +94,18 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\brProject.Infraestructure\brProject.Infraestructure.csproj">
+      <Project>{f196ae90-490b-4adc-a392-9b3f9c6ee0db}</Project>
+      <Name>brProject.Infraestructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\brProject.Migration\brProject.Migration.csproj">
+      <Project>{741a159f-dc6d-4fc7-97da-13dc3f3e20a3}</Project>
+      <Name>brProject.Migration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\brProject.Models\brProject.Models.csproj">
+      <Project>{4e787db4-d8e2-4733-b09a-e82cceb90c35}</Project>
+      <Name>brProject.Models</Name>
+    </ProjectReference>
     <ProjectReference Include="..\brProjectMVC\brProjectMVC.csproj">
       <Project>{AB377692-DE06-444A-9E72-E47DB7B4BBDD}</Project>
       <Name>brProjectMVC</Name>

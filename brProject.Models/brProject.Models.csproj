@@ -49,10 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DTO\CategoryDTO.cs" />
+    <Compile Include="DTO\ProductDTO.cs" />
+    <Compile Include="DTO\StoreDTO.cs" />
     <Compile Include="Mapping\ProductMap.cs" />
     <Compile Include="Mapping\CategoryMap.cs" />
     <Compile Include="Entities\Category.cs" />
-    <Compile Include="Entities\Employee.cs" />
     <Compile Include="Entities\Product.cs" />
     <Compile Include="Entities\Store.cs" />
     <Compile Include="Mapping\StoreMap.cs" />

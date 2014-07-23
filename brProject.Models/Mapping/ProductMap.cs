@@ -18,14 +18,22 @@ namespace brProject.Models
 
         public ProductMap()
         {
+            Schema("dbo");
             Table("Product");
-            LazyLoad();
+            //LazyLoad();
             Id(x => x.Id).GeneratedBy.Identity().Column("Id");
-            //References(x => x.Store).Column("Store_Id");
+
+            References(x => x.Store).Column("Store_Id").Not.LazyLoad(); ;
+
             Map(x => x.Name).Column("Name");
+            Map(x => x.Price).Column("Price");
+            
             HasManyToMany(x => x.Categories)
                 .Cascade.All()
-                .Table("Product_Category");
+                .ParentKeyColumn("Product_Id")
+                  .ChildKeyColumn("Category_Id")
+                .Table("Product_Category")
+                .Not.LazyLoad();
         }
     }
 

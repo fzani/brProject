@@ -1,17 +1,19 @@
-﻿
+﻿@using brProject.Models;
 @{
-   // Layout = null;
+    ViewBag.Title = "BR Store";
 }
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-</head>
-<body>
-    <div> 
+<h2>@ViewBag.Title.</h2>
+<div class="row">
+    <div class="col-md-4">
+        <ul>
+            @foreach (CategoryDTO item in ViewBag.categories)
+            {
+                <li><a>@item.Name (@item.Products.Count())</a></li>
+            }
+        </ul>
     </div>
-</body>
-</html>
+    <div class="col-md-8">
+
+    </div>
+</div>

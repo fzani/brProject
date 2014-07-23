@@ -8,9 +8,17 @@ namespace brProject.Models
 {
     public class Category
     {
-        public virtual int Id { get; protected set; }
-        public virtual string Name { get; set; }
-        public virtual Category Parent { get; protected set; }
-        public virtual IList<Product> Products { get; protected set; }
+        public Category()
+        {
+            Categories = new List<Category>();
+            Products = new List<Product>();
+        }
+        public virtual int Id { get; set; }
+        public virtual Category Parent { get; set; }
+        public virtual Store Store { get; set; }
+        public virtual String Name { get; set; }
+        public virtual IList<Category> Categories { get; set; }
+        public virtual IList<Product> Products { get; set; }
+
     }
 }

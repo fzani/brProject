@@ -1,12 +1,4 @@
-﻿using System;
-using System.Text;
-using System.Collections.Generic;
-using System.Linq;
-using NHibernate.Mapping.ByCode.Conformist;
-using NHibernate.Mapping.ByCode;
-using FluentNHibernate.Automapping;
-using brProject.Models;
-using FluentNHibernate.Mapping;
+﻿using FluentNHibernate.Mapping;
 
 
 namespace brProject.Models
@@ -18,15 +10,20 @@ namespace brProject.Models
 
         public CategoryMap()
         {
+            Schema("dbo");
             Table("Category");
-            LazyLoad();
+            //LazyLoad();
             Id(x => x.Id).GeneratedBy.Identity().Column("Id");
-            References(x => x.Parent).Column("Parent");
+
+            References(x => x.Parent).Column("Parent").Not.LazyLoad(); ;
+            References(x => x.Store).Column("Store_Id").Not.LazyLoad(); ;
+
             Map(x => x.Name).Column("Name");
-            Map(x => x.Parent).Column("Parent");
+
+            HasMany(x => x.Categories).KeyColumn("Parent").Not.LazyLoad(); ;
             HasManyToMany(x => x.Products)
                    .Cascade.All()
-                   .Table("Product_Category");
+                   .Table("Product_Category").Not.LazyLoad(); 
         }
     }
 }
