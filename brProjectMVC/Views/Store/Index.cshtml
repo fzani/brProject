@@ -9,11 +9,25 @@
         <ul>
             @foreach (CategoryDTO item in ViewBag.categories)
             {
-                <li><a>@item.Name (@item.Products.Count())</a></li>
+                <li><a onclick="categoryClick(@item.Id)">@item.Name (@item.Products.Count())</a></li>
             }
         </ul>
     </div>
-    <div class="col-md-8">
+    <div id="productsId" class="col-md-8">
 
     </div>
 </div>
+
+@section scripts{
+    <script id="itemTemplate" type="text/x-jQuery-tmpl">
+        <div class="Item">
+            @*<img src="BookPictures/${picture}" alt="" />*@
+            <h2>${Name}</h2>
+            @*<h3>${category}</h3>*@
+            Price: ${formatPrice(Price)}
+        </div>
+    </script>
+    <script src="~/Scripts/StoreIndex.js"></script>
+    <script src='http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js'></script>
+}
+

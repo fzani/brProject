@@ -12,7 +12,7 @@ namespace brProjectMVC.Controllers
     {
         protected readonly StoreRepository<Product> repositoryProduct;
         protected readonly StoreRepository<Category> repositoryCategory;
-                
+
         public StoreController()
         {
             repositoryProduct = new StoreRepository<Product>();
@@ -30,9 +30,14 @@ namespace brProjectMVC.Controllers
         public ActionResult GetProduct(int id)
         {
             var products = repositoryProduct.ProductGetByCategory(id);
-            return Json(products, JsonRequestBehavior.AllowGet);
+            return Json(products.Select(s => new { s.Id, s.Name, s.Price }), JsonRequestBehavior.AllowGet);
         }
+        public ViewResult SaveCategory()
+        {
+            ViewBag.categories = repositoryCategory.CategoryGetAll();
 
+            return View();
+        }
         [HttpPost]
         public JsonResult SaveCategory(Category item)
         {
@@ -40,7 +45,12 @@ namespace brProjectMVC.Controllers
             saved = repositoryCategory.SaveOrUpdate(item) == 1 ? true : false;
             return Json(saved, JsonRequestBehavior.AllowGet);
         }
+        public ViewResult SaveProduct()
+        {
+            ViewBag.categories = repositoryCategory.CategoryGetAll();
 
+            return View();
+        }
         [HttpPost]
         public JsonResult SaveProduct(Product item)
         {

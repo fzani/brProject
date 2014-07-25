@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Script.Serialization;
 
 namespace brProject.Models
 {
@@ -14,11 +15,15 @@ namespace brProject.Models
             Products = new List<ProductDTO>();
         }
         public  int Id { get; set; }
+        [ScriptIgnore]
         public  CategoryDTO Parent { get; set; }
-        public  StoreDTO Store { get; set; }
+        [ScriptIgnore]
+        public StoreDTO Store { get; set; }
         public  String Name { get; set; }
+        [ScriptIgnore]
         public IList<CategoryDTO> Categories { get; set; }
-        public  IList<ProductDTO> Products { get; set; }
+        [ScriptIgnore]
+        public IList<ProductDTO> Products { get; set; }
 
     }
 }
