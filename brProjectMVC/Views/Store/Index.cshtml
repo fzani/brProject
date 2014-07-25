@@ -9,7 +9,23 @@
         <ul>
             @foreach (CategoryDTO item in ViewBag.categories)
             {
-                <li><a onclick="categoryClick(@item.Id)">@item.Name (@item.Products.Count())</a></li>
+                if (item.Parent == null)
+                {
+                    <li>
+                        <a onclick="categoryClick(@item.Id)">@item.Name (@item.Products.Count())</a>
+                        @if (item.Categories != null && item.Categories.Count > 0)
+                        {
+                        <ul>
+                            @foreach (var i in item.Categories)
+                            {
+                                <li><a onclick="categoryClick(@i.Id)">@i.Name (@i.Products.Count())</a></li>
+                            }
+                        </ul>
+
+                        }
+                    </li>
+                }
+
             }
         </ul>
     </div>

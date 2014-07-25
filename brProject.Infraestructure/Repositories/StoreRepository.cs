@@ -13,8 +13,8 @@ namespace brProject.Infraestructure
     {
         public StoreRepository()
         {
-            Mapper.CreateMap<Category, CategoryDTO>()
-                 .ForMember(dto=> dto.Categories, opt=> opt.Ignore());
+            Mapper.CreateMap<Category, CategoryDTO>();
+                 //.ForMember(dto=> dto.Categories, opt=> opt.Ignore());
             Mapper.CreateMap<Product, ProductDTO>();
             Mapper.CreateMap<Store, StoreDTO>();
         }
